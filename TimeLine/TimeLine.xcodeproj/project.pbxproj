@@ -109,7 +109,6 @@
 		3C5E8D63244C8F47004A4459 = {
 			isa = PBXGroup;
 			children = (
-				3C5E8DD9244C9735004A4459 /* Alamofire.framework */,
 				3C5E8D6E244C8F47004A4459 /* TimeLine */,
 				3C5E8D85244C8F49004A4459 /* TimeLineTests */,
 				3C5E8D90244C8F49004A4459 /* TimeLineUITests */,
@@ -171,6 +170,7 @@
 		3C5E8DC3244C9182004A4459 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C5E8DD9244C9735004A4459 /* Alamofire.framework */,
 				3C5E8DD2244C9592004A4459 /* EndPoints.framework */,
 			);
 			name = Frameworks;
