@@ -16,6 +16,7 @@
 		3C5E8DDF244CC9FC004A4459 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5E8DDE244CC9FC004A4459 /* APIError.swift */; };
 		3C5E8DE1244CCC84004A4459 /* UserEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5E8DE0244CCC84004A4459 /* UserEndpoints.swift */; };
 		3C8BAEFE244CD89900FBC243 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8BAEFD244CD89900FBC243 /* ErrorModel.swift */; };
+		3C8BAF01244CDE5D00FBC243 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C5E8DD5244C9663004A4459 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,19 @@
 			remoteInfo = EndPoints;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3C8BAF00244CDE5300FBC243 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3C8BAF01244CDE5D00FBC243 /* Alamofire.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3C5E8DA9244C902D004A4459 /* EndPoints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EndPoints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +174,7 @@
 				3C5E8DAE244C902D004A4459 /* Sources */,
 				3C5E8DAF244C902D004A4459 /* Frameworks */,
 				3C5E8DB0244C902D004A4459 /* Resources */,
+				3C8BAF00244CDE5300FBC243 /* CopyFiles */,
 			);
 			buildRules = (
 			);
