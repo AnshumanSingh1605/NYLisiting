@@ -11,7 +11,7 @@
 		3C5E8DB8244C902D004A4459 /* EndPointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5E8DB7244C902D004A4459 /* EndPointsTests.swift */; };
 		3C5E8DBA244C902D004A4459 /* EndPoints.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C5E8DAC244C902D004A4459 /* EndPoints.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C5E8DC9244C9197004A4459 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5E8DC8244C9197004A4459 /* Endpoints.swift */; };
-		3C5E8DCC244C9367004A4459 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5E8DCB244C9367004A4459 /* Alamofire.framework */; };
+		3C5E8DD6244C9663004A4459 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5E8DD5244C9663004A4459 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +32,7 @@
 		3C5E8DB7244C902D004A4459 /* EndPointsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointsTests.swift; sourceTree = "<group>"; };
 		3C5E8DB9244C902D004A4459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C5E8DC8244C9197004A4459 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
-		3C5E8DCB244C9367004A4459 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Vendor/Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		3C5E8DD5244C9663004A4459 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Vendor/Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C5E8DCC244C9367004A4459 /* Alamofire.framework in Frameworks */,
+				3C5E8DD6244C9663004A4459 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +96,7 @@
 		3C5E8DCA244C9346004A4459 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				3C5E8DCB244C9367004A4459 /* Alamofire.framework */,
+				3C5E8DD5244C9663004A4459 /* Alamofire.framework */,
 			);
 			name = Framework;
 			sourceTree = "<group>";
