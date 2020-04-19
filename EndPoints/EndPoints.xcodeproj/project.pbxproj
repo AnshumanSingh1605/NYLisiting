@@ -12,6 +12,10 @@
 		3C5E8DBA244C902D004A4459 /* EndPoints.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C5E8DAC244C902D004A4459 /* EndPoints.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C5E8DC9244C9197004A4459 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5E8DC8244C9197004A4459 /* Endpoints.swift */; };
 		3C5E8DD6244C9663004A4459 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5E8DD5244C9663004A4459 /* Alamofire.framework */; };
+		3C5E8DDC244CC740004A4459 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5E8DDB244CC740004A4459 /* APIConstants.swift */; };
+		3C5E8DDF244CC9FC004A4459 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5E8DDE244CC9FC004A4459 /* APIError.swift */; };
+		3C5E8DE1244CCC84004A4459 /* UserEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5E8DE0244CCC84004A4459 /* UserEndpoints.swift */; };
+		3C8BAEFE244CD89900FBC243 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8BAEFD244CD89900FBC243 /* ErrorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +37,10 @@
 		3C5E8DB9244C902D004A4459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C5E8DC8244C9197004A4459 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		3C5E8DD5244C9663004A4459 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Vendor/Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		3C5E8DDB244CC740004A4459 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		3C5E8DDE244CC9FC004A4459 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		3C5E8DE0244CCC84004A4459 /* UserEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndpoints.swift; sourceTree = "<group>"; };
+		3C8BAEFD244CD89900FBC243 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +85,11 @@
 		3C5E8DAB244C902D004A4459 /* EndPoints */ = {
 			isa = PBXGroup;
 			children = (
+				3C5E8DE2244CD008004A4459 /* Requisites */,
 				3C5E8DAC244C902D004A4459 /* EndPoints.h */,
 				3C5E8DAD244C902D004A4459 /* Info.plist */,
 				3C5E8DC8244C9197004A4459 /* Endpoints.swift */,
+				3C5E8DE0244CCC84004A4459 /* UserEndpoints.swift */,
 			);
 			path = EndPoints;
 			sourceTree = "<group>";
@@ -99,6 +109,16 @@
 				3C5E8DD5244C9663004A4459 /* Alamofire.framework */,
 			);
 			name = Framework;
+			sourceTree = "<group>";
+		};
+		3C5E8DE2244CD008004A4459 /* Requisites */ = {
+			isa = PBXGroup;
+			children = (
+				3C5E8DDE244CC9FC004A4459 /* APIError.swift */,
+				3C5E8DDB244CC740004A4459 /* APIConstants.swift */,
+				3C8BAEFD244CD89900FBC243 /* ErrorModel.swift */,
+			);
+			path = Requisites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,7 +231,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C8BAEFE244CD89900FBC243 /* ErrorModel.swift in Sources */,
+				3C5E8DDC244CC740004A4459 /* APIConstants.swift in Sources */,
+				3C5E8DE1244CCC84004A4459 /* UserEndpoints.swift in Sources */,
 				3C5E8DC9244C9197004A4459 /* Endpoints.swift in Sources */,
+				3C5E8DDF244CC9FC004A4459 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
