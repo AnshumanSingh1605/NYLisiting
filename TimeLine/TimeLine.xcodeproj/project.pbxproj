@@ -548,7 +548,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"TimeLine/Utilities/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TimeLine/Model/Utilities/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TimeLine/Launch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -567,7 +567,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"TimeLine/Utilities/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"TimeLine/Model/Utilities/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TimeLine/Launch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
