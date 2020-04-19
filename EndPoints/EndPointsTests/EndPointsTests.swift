@@ -30,5 +30,26 @@ class EndPointsTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testTestRun() {
+        let expect = expectation(description: "Fetch request completed...")
+        
+        UserEndpoints.fetchListing(1).requestWithGenerics { (_, statusCode, model : BlankResponse?, error) in
+            if error != nil {
+                expect.fulfill()
+            } else if statusCode != 401 || statusCode != 429 {
+                expect.fulfill()
+            }
+        }
+        
+        waitForExpectations(timeout: 10) { (error) in
+            if error != nil {
+                print("fetch request failed........")
+            }
+        }
+    }
+}
 
+struct BlankResponse : Codable {
+    
 }
