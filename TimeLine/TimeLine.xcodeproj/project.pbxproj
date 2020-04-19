@@ -15,6 +15,8 @@
 		3C5E8D7C244C8F48004A4459 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C5E8D7A244C8F48004A4459 /* LaunchScreen.storyboard */; };
 		3C5E8D87244C8F49004A4459 /* TimeLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5E8D86244C8F49004A4459 /* TimeLineTests.swift */; };
 		3C5E8D92244C8F49004A4459 /* TimeLineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5E8D91244C8F49004A4459 /* TimeLineUITests.swift */; };
+		3C5E8DC5244C9182004A4459 /* EndPoints.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5E8DC4244C9182004A4459 /* EndPoints.framework */; };
+		3C5E8DC6244C9182004A4459 /* EndPoints.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5E8DC4244C9182004A4459 /* EndPoints.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3C5E8DC7244C9182004A4459 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3C5E8DC6244C9182004A4459 /* EndPoints.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3C5E8D6C244C8F47004A4459 /* TimeLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C5E8D6F244C8F47004A4459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +65,7 @@
 		3C5E8D8D244C8F49004A4459 /* TimeLineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeLineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C5E8D91244C8F49004A4459 /* TimeLineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineUITests.swift; sourceTree = "<group>"; };
 		3C5E8D93244C8F49004A4459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C5E8DC4244C9182004A4459 /* EndPoints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EndPoints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C5E8DC5244C9182004A4459 /* EndPoints.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +101,7 @@
 				3C5E8D85244C8F49004A4459 /* TimeLineTests */,
 				3C5E8D90244C8F49004A4459 /* TimeLineUITests */,
 				3C5E8D6D244C8F47004A4459 /* Products */,
+				3C5E8DC3244C9182004A4459 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +155,14 @@
 			path = TimeLineUITests;
 			sourceTree = "<group>";
 		};
+		3C5E8DC3244C9182004A4459 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C5E8DC4244C9182004A4459 /* EndPoints.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +173,7 @@
 				3C5E8D68244C8F47004A4459 /* Sources */,
 				3C5E8D69244C8F47004A4459 /* Frameworks */,
 				3C5E8D6A244C8F47004A4459 /* Resources */,
+				3C5E8DC7244C9182004A4459 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
