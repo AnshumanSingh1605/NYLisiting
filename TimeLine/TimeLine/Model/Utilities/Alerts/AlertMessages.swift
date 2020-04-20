@@ -33,6 +33,7 @@ enum AlertMessages : Equatable {
     }
    
     case custom(String), internetError, serverError
+    case customOptional(String?)
     case `default` , none
 
     
@@ -40,6 +41,7 @@ enum AlertMessages : Equatable {
     var value: Text {
         switch self {
         case .custom(let message):                              return Text(message)
+        case .customOptional(let message):                      return Text(message ?? Message.serverError.value)
         case .internetError:                                    return .text(.internetError)
         case .serverError:                                      return .text(.serverError)
         case .none :                                            return .text(.none)
