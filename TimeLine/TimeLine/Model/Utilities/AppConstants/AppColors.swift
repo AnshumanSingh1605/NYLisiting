@@ -8,18 +8,10 @@
 
 import Foundation
 import SwiftUI
+import UIKit
 
 extension Constants {
-    enum Colors : String {
-        
-        case background, border, buttonBG, navBar, text117, textAction, textOnDark,
-        shadow, darkButtonBG, silver, homeBG , backgroundTertiary , backgroundGray
-        
-        case primary, secondary, tertiary ,quaternary
-        case buttonBackground , baseline , navColor
-        
-        var value: Color {
-            return Color(rawValue)
-        }
+    enum Colors {
+        static let navColor = UIColor(red: 120.0 / 255.0, green: 225.0 / 255.0, blue: 196.0 / 255.0, alpha: 1)
     }
 }
