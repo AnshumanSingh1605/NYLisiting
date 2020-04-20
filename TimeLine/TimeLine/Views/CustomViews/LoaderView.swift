@@ -19,7 +19,7 @@ struct ActivityIndicator : UIViewRepresentable {
 
     func makeUIView(context: UIViewRepresentableContext<ActivityIndicator>) -> UIActivityIndicatorView {
         let activityIndicator = UIActivityIndicatorView(style: style)
-        activityIndicator.color = UIColor.label
+        activityIndicator.color = .lightGray
         return activityIndicator
     }
     
@@ -43,16 +43,13 @@ struct LoaderView<Content>: View where Content: View {
                 VStack(spacing :20) {
                     ActivityIndicator(isAnimating: .constant(true)).zIndex(2)
                     Text.text(.pleaseWait)
-                        .foregroundColor(.primary)
+                        .foregroundColor(Color(white: 0.5))
                         .fontWeight(.semibold)
                 }
-//                .frame(width: geometry.size.width / 2,
-//                       height: geometry.size.height / 5)
                 .frame(width: 150, height: 150, alignment: .center)
-                .background(.primary)//.brightness(0.95))
-                .foregroundColor(.tertiary)
+                .background(.base)
                 .cornerRadius(20)
-                //.shadow(color: Constants.AppTheme.quaternary.value, radius: 5)
+                .shadow(color: Constants.AppTheme.shadow.value, radius: 5)
                 .opacity(self.isShowing ? 1 : 0)
             }
         }
