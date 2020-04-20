@@ -93,7 +93,7 @@ public extension Endpoints {
     
     private func handleGenerics<ValidServerResponse : Codable>(_ response: AFDataResponse<Any>, responseClosure: @escaping GenericWebResponse<ValidServerResponse>) {
         debugPrint("Request Response:----------")
-        debugPrint(NSString(data: response.data!, encoding: String.Encoding.utf8.rawValue) ?? "")
+        debugPrint(NSString(data: response.data ?? Data(), encoding: String.Encoding.utf8.rawValue) ?? "")
         debugPrint("************************************************************************************")
         
         switch response.result {
