@@ -10,11 +10,11 @@ import SwiftUI
 import EndPoints
 
 struct ContentView: View {
-    
+
     @State var showMenu = false
-    
+
     var body: some View {
-        
+
         let drag = DragGesture()
             .onEnded {
                 if $0.translation.width < -100 {
@@ -23,7 +23,7 @@ struct ContentView: View {
                     }
                 }
             }
-        
+
         return NavigationView {
             GeometryReader { geometry in
                 ZStack(alignment: .leading) {
@@ -32,17 +32,12 @@ struct ContentView: View {
                         //.offset(x: self.showMenu ? geometry.size.width - 300 : 0)
                         .disabled(self.showMenu)
                     if self.showMenu {
-                        MenuView()
+                        MenuView(showMenu: self.$showMenu)
                             .frame(width: geometry.size.width - 150)
                             .transition(.move(edge: .leading))
                     }
                 }
                 .gesture(drag)
-                .onTapGesture {
-                    withAnimation {
-                        self.showMenu.toggle()
-                    }
-                }
             }
             .navigationBarTitle(.text(.navTitle), displayMode: .inline)
                 .navigationBarItems(leading: (
@@ -60,12 +55,26 @@ struct ContentView: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
+// Image URLs to load
+let posters = [
+    "https://image.tmdb.org/t/p/original//pThyQovXQrw2m0s9x82twj48Jq4.jpg",
+    "https://image.tmdb.org/t/p/original//vqzNJRH4YyquRiWxCCOH0aXggHI.jpg",
+    "https://image.tmdb.org/t/p/original//6ApDtO7xaWAfPqfi2IARXIzj8QS.jpg",
+    "https://image.tmdb.org/t/p/original//7GsM4mtM0worCtIVeiQt28HieeN.jpg"
+]//.map { URL(string: $0)! }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
 
+//struct ContentView : View {
+//    var body : some View {
+//        NavigationView {
+//            List {
+//                ForEach(posters, id : \.self) { (url) in
+//                    ImageRow(url: url)
+//                }
+//                .navigationBarTitle(Text("Load Rmeote Images..."))
+//            }
+//        }
+//    }
+//}
 
 
