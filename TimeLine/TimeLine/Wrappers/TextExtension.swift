@@ -14,9 +14,9 @@ extension Text {
         return Text(message.value)
     }
     
-//    static func text(_ display : Constants.Texts) -> Text {
-//        return Text(display.value)
-//    }
+    static func text(_ display : Constants.Texts) -> Text {
+        return Text(display.value)
+    }
     
     static func optionalText(_ value : String?) -> Text {
         if let _value = value {
