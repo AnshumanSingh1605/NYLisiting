@@ -15,13 +15,16 @@ enum AlertMessages : Equatable {
       
         case internetError = "Seems like you are offline! please check your internet connection"
         case serverError = "Oops! something went wrong at our end, we are trying to fix it."
-        case userNameRequired = "Please enter your email id."
-        case passwordRequired = "Please enter your password."
-        case confirmPasswordRequired = "Please confirm your password."
-        case cameraSupport = "Sorry your device's camera is not supporting."
-        case errorDownloading = "Oops! Something went wrong while downloading your file."
-        case downloaded = "Yay!, file saved succesfully."
+
         case `default` = "Sorry"
+        
+        case selectAppTheme = "Select the theme of the app."
+        case selectPeriod = "Select the period of the articles."
+        
+        case profile = "Profile"
+        case messages = "Messages"
+        case settings = "Settings"
+        
         case none = ""
         
         var value : String {
