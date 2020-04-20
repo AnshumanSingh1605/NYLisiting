@@ -45,18 +45,9 @@ enum MediaType: String, Codable {
     case image = "image"
 }
 
-enum Source: String, Codable {
-    case newYorkTimes = "New York Times"
-}
 
-enum Subsection: String, Codable {
-    case empty = ""
-    case europe = "Europe"
-    case live = "Live"
-    case politics = "Politics"
-}
 
-enum ResultType: String, Codable {
-    case article = "Article"
-    case interactive = "Interactive"
-}
+//enum ResultType: String, Codable {
+//    case article = "Article"
+//    case interactive = "Interactive"
+//}

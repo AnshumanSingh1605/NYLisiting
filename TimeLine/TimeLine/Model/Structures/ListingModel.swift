@@ -23,18 +23,18 @@ struct ListingModel: Codable {
 
 
 // MARK: - Result
-struct ArticleModel : Codable {
-    
+struct ArticleModel : Codable , Identifiable {
+    let id : Int
     let uri: String
     let url: String
-    let id, assetID: Int
-    let source: Source
+    let assetID: Int
+    let source: String
     let publishedDate, updated, section: String
-    let subsection: Subsection
+    let subsection: String
     let nytdsection, adxKeywords: String
     //let column: JSONNull?
     let byline: String
-    let type: ResultType
+    let type: String
     let title, abstract: String
     let desFacet, orgFacet, perFacet, geoFacet: [String]
     let media: [Media]
