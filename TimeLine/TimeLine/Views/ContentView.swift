@@ -10,11 +10,12 @@ import SwiftUI
 import EndPoints
 
 struct ContentView: View {
-
+    
     @State var showMenu = false
-
+    @State private var showCancelButton: Bool = false
+        
     var body: some View {
-
+        
         let drag = DragGesture()
             .onEnded {
                 if $0.translation.width < -100 {
@@ -22,14 +23,13 @@ struct ContentView: View {
                         self.showMenu = false
                     }
                 }
-            }
-
+        }
+        
         return NavigationView {
             GeometryReader { geometry in
                 ZStack(alignment: .leading) {
-                    TimeLineView(showMenu: self.$showMenu)
+                    TimeLineView(showMenu: self.$showMenu,showCancelButton: self.$showCancelButton)
                         .frame(width: geometry.size.width, height: geometry.size.height)
-                        //.offset(x: self.showMenu ? geometry.size.width - 300 : 0)
                         .disabled(self.showMenu)
                     if self.showMenu {
                         MenuView(showMenu: self.$showMenu)
@@ -39,42 +39,32 @@ struct ContentView: View {
                 }
                 .gesture(drag)
             }
+            .background(.primary)
             .navigationBarTitle(.text(.navTitle), displayMode: .inline)
-                .navigationBarItems(leading: (
-                    Button(action: {
-                        withAnimation {
-                            self.showMenu.toggle()
-                        }
-                    }) {
-                        Image.system(.hamburger)
-                        //Image(systemName: "line.horizontal.3")
-                            .imageScale(.large)
+            .navigationBarItems(leading:
+                Button(action: {
+                    withAnimation {
+                        self.showMenu.toggle()
                     }
-                ))
+                }) {
+                    Image.system(.hamburger)
+                        .imageScale(.large)
+                        .foregroundColor(.white)
+                }
+                , trailing:
+                Button(action: {
+                    withAnimation {
+                        self.showCancelButton.toggle()
+                    }
+                }) {
+                    Image.system(.search)
+                        .foregroundColor(.white)
+                        .opacity(self.showCancelButton ? 0 : 1)
+                }
+                .disabled(self.showCancelButton)
+            )
+            
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
-// Image URLs to load
-let posters = [
-    "https://image.tmdb.org/t/p/original//pThyQovXQrw2m0s9x82twj48Jq4.jpg",
-    "https://image.tmdb.org/t/p/original//vqzNJRH4YyquRiWxCCOH0aXggHI.jpg",
-    "https://image.tmdb.org/t/p/original//6ApDtO7xaWAfPqfi2IARXIzj8QS.jpg",
-    "https://image.tmdb.org/t/p/original//7GsM4mtM0worCtIVeiQt28HieeN.jpg"
-]//.map { URL(string: $0)! }
-
-
-//struct ContentView : View {
-//    var body : some View {
-//        NavigationView {
-//            List {
-//                ForEach(posters, id : \.self) { (url) in
-//                    ImageRow(url: url)
-//                }
-//                .navigationBarTitle(Text("Load Rmeote Images..."))
-//            }
-//        }
-//    }
-//}
-
-
