@@ -11,11 +11,12 @@ import Foundation
 enum UserDefaultConstants {
     case kappTheme
     case kuserPreferredAppTheme
-    
+    case kPeriodOfArticle
     var value: String {
         switch self {
         case .kappTheme:                         return "applicationAppTheme"
         case .kuserPreferredAppTheme:            return "userPreferredAppTheme"
+        case .kPeriodOfArticle:                  return "userPreferredPeriodOfArticle"
         }
     }
 }

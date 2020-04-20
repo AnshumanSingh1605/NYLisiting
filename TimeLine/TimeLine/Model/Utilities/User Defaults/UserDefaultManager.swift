@@ -53,4 +53,11 @@ final class UserDefaultsManager {
             set(value: appTheme?.rawValue as Any, forKey: .kappTheme)
         }
     }
+    
+    var period : Int = UserDefaults.standard.value(forKey: UserDefaultConstants.kPeriodOfArticle.value) as? Int ?? 1 {
+        didSet {
+            set(value: period, forKey: .kPeriodOfArticle)
+        }
+    }
+
 }
