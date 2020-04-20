@@ -8,14 +8,37 @@
 
 import SwiftUI
 
-struct RadioButton: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct RadioButton<T>: View where T : CustomStringConvertible {
+    
+    let arrValues : [T]
+    var alignment: Constants.Alignment = .horizontal
+
+    @Binding var selectedValue : T
+
+    var body : some View {
+        HStack(spacing : 0) {
+            if alignment ==  .horizontal {
+                HStack(spacing : 0) {
+                    ForEach(self.arrValues, id : \.description) { value in
+                        HStack {
+                            CheckBoxView(selectedValue: self.$selectedValue, text: value)
+                            Spacer()
+                        }
+                    }
+                }
+            }
+            else {
+                VStack(alignment: .leading, spacing : 20) {
+                    ForEach(self.arrValues, id : \.description) { value in
+                        VStack {
+                            CheckBoxView(selectedValue: self.$selectedValue, type: .circle, text: value)
+                            //Spacer()
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
-struct RadioButton_Previews: PreviewProvider {
-    static var previews: some View {
-        RadioButton()
-    }
-}
+
