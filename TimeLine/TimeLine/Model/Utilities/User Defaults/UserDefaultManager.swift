@@ -9,10 +9,10 @@
 import Foundation
 import Combine
 
-final class UserDefaultsManager : ObservableObject {
+final class UserDefaultsManager {
     
     static let shared = UserDefaultsManager()
-        
+    
     func set(value: Any, forKey key: UserDefaultConstants) {
         UserDefaults.standard.setValue(value, forKey: key.value)
         UserDefaults.standard.synchronize()
@@ -26,67 +26,31 @@ final class UserDefaultsManager : ObservableObject {
         let defaults = UserDefaults.standard
         let dictionary = defaults.dictionaryRepresentation()
         dictionary.keys.forEach { key in
-            print("key is....\(key)")
-            if key != UserDefaultConstants.backupDataSaveTo.value {
-                print("removing value for....\(key)")
-                defaults.removeObject(forKey: key)
-            }
+            defaults.removeObject(forKey: key)
         }
         defaults.synchronize()
     }
     
-    @Published var loginToken : String? = UserDefaults.standard.string(forKey: UserDefaultConstants.loginToken.value) {
-        didSet {
-            guard let _logintoken = self.loginToken else { return }
-            set(value: _logintoken, forKey: .loginToken)
-        }
-    }
- 
-    @Published var isUserLoggedIn : Bool = UserDefaults.standard.bool(forKey: UserDefaultConstants.isUserLoggedIn.value) {
-        didSet {
-            set(value: self.isUserLoggedIn, forKey: .isUserLoggedIn)
-            //self.isUserLoggedIn ? nil : remove(forkey: .loginToken)
-            if !self.isUserLoggedIn {
-                resetDefaults()
+    var userPreferredTheme : Constants.Theme  {
+        get {
+            guard let theme = UserDefaults.standard.string(forKey: UserDefaultConstants.kuserPreferredAppTheme.value) else {
+                return .light
             }
+            return Constants.Theme(rawValue: theme) ?? .light
+        } set(userTheme) {
+            set(value: userTheme.rawValue, forKey: .kuserPreferredAppTheme)
         }
     }
     
-    @Published var isPatientProfileCompleted : Bool = UserDefaults.standard.bool(forKey: UserDefaultConstants.isPatientProfileCompleted.value) {
-        didSet {
-            set(value: self.isPatientProfileCompleted, forKey: .isPatientProfileCompleted)
+    var appTheme : Constants.Theme? {
+        get {
+            guard let theme = UserDefaults.standard.string(forKey: UserDefaultConstants.kappTheme.value) else {
+                return nil
+            }
+            return Constants.Theme(rawValue: theme)
         }
-    }
-    
-    @Published var isAutoLogoutEnabled : Bool = UserDefaults.standard.bool(forKey: UserDefaultConstants.isAutoLogoutEnabled.value) {
-        didSet {
-            set(value: self.isAutoLogoutEnabled, forKey: .isAutoLogoutEnabled)
-        }
-    }
-
-    @Published var backupDataSaveTo: String? = UserDefaults.standard.string(forKey: UserDefaultConstants.backupDataSaveTo.value) //?? Constants.Strings.saveInfoOnCloud
-        {
-        didSet {
-            set(value: backupDataSaveTo as Any, forKey: .backupDataSaveTo)
-        }
-    }
-    
-    @Published var usernameLastLoggedIn: String = UserDefaults.standard.string(forKey: UserDefaultConstants.usernameLastLoggedIn.value) ?? "" {
-        didSet {
-            set(value: usernameLastLoggedIn, forKey: .usernameLastLoggedIn)
-        }
-    }
-    
-    
-    @Published var accountOwnerInfo : Data? = UserDefaults.standard.data(forKey: UserDefaultConstants.accountOwnerInfo.value) {
-        didSet {
-            set(value: accountOwnerInfo as Any, forKey: .accountOwnerInfo)
-        }
-    }
-    
-    @Published var userEmailAddress : String = UserDefaults.standard.string(forKey: UserDefaultConstants.userEmailAddress.value) ?? String() {
-        didSet {
-            set(value: userEmailAddress , forKey: .userEmailAddress)
+        set(appTheme) {
+            set(value: appTheme?.rawValue as Any, forKey: .kappTheme)
         }
     }
 }
