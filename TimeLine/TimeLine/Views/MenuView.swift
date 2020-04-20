@@ -24,47 +24,51 @@ import SwiftUI
 //}
 
 struct MenuView: View {
-    @Binding var showMenu : Bool
     
+    private let periodValueChanged = NotificationCenter.default.publisher(for: .periodValueChangedForMenu)
+    
+    @ObservedObject var viewModel = MenuViewModel()
+    
+    @Binding var showMenu : Bool
+
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Image.system(.person)
-                    .foregroundColor(.gray)
-                    .imageScale(.large)
-                Text.text(.profile)
-                    .foregroundColor(.gray)
-                    .font(.headline)
-            }
-            .padding(.top, 100)
-            HStack {
-                Image.system(.messages)
-                    .foregroundColor(.gray)
-                    .imageScale(.large)
-                Text.text(.messages)
-                    .foregroundColor(.gray)
-                    .font(.headline)
-            }
-                .padding(.top, 30)
-            HStack {
-                Image.system(.settings)
-                    .foregroundColor(.gray)
-                    .imageScale(.large)
-                Text.text(.settings)
-                    .foregroundColor(.gray)
-                    .font(.headline)
-            }
-            .padding(.top, 30)
-            Spacer()
+        ScrollView {
+          VStack(alignment: .leading) {
+              VStack(alignment: .leading) {
+                  Text.text(.selectAppTheme)
+                      .foregroundColor(.secondary)
+                  
+                  RadioButton(arrValues: self.viewModel.arrThemes, selectedValue: self.$viewModel.theme)
+              }
+              .padding(.top, 120)
+              
+              VStack(alignment: .leading) {
+                  Text.text(.selectPeriod)
+                      .foregroundColor(.secondary)
+                  
+                  RadioButton(arrValues: self.viewModel.arrPeriods, selectedValue: self.$viewModel.period)
+              }
+              .padding(.top, 30)
+              
+              Spacer()
+          }
         }
-            .padding()
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color(red: 32/255, green: 32/255, blue: 32/255))
-            .edgesIgnoringSafeArea(.all)
-            .onTapGesture {
-                withAnimation {
-                    self.showMenu.toggle()
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(.tertiaryBackground)
+        .edgesIgnoringSafeArea(.all)
+        .onTapGesture {
+            withAnimation {
+                self.showMenu.toggle()
+            }
+        }
+        .onReceive(periodValueChanged) { (output) in
+            withAnimation {
+                DispatchQueue.main.async {
+                    self.showMenu = false
+                    NotificationCenter.default.post(name: .periodValueChanged, object: nil)
                 }
             }
+        }
     }
 }
