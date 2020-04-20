@@ -12,15 +12,22 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        peredictAppMode()
         
+        //predict the theme of the app initially.
+        predictAppMode()
+        
+        // Updating the appearance of the table view and its cell.
         UITableView.appearance().separatorColor = .clear
         UITableView.appearance().backgroundColor = .clear
         
         UITableViewCell.appearance().backgroundColor = .clear
         UITableViewCell.appearance().selectionStyle = .none
-        
+
+        // Updating the appearance of the navigation bar.
+        UINavigationBar.appearance().barTintColor = Constants.Colors.navColor
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white ]
+
         return true
     }
     
@@ -39,15 +46,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // To predict the launch mode of the application...
-    private func peredictAppMode() {
+    private func predictAppMode() {
         if UserDefaultsManager.shared.appTheme == nil {
             if UITraitCollection.current.userInterfaceStyle == .light {
-                print("Light mode")
                 UserDefaultsManager.shared.appTheme = .light
+                UserDefaultsManager.shared.userPreferredTheme = .light
             } else {
-                print("Dark mode")
                 UserDefaultsManager.shared.appTheme = .dark
+                UserDefaultsManager.shared.userPreferredTheme = .dark
             }
+        } else {
+            // assigning the user preference app theme for the app presentation
+            UserDefaultsManager.shared.appTheme = UserDefaultsManager.shared.userPreferredTheme
         }
     }
 }
