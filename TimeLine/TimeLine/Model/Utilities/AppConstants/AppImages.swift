@@ -15,7 +15,15 @@ extension Constants {
         case person = "person"
         case messages = "envelope"
         case settings = "gear"
-
+        case calendar = "calendar"
+        case disclosure = "chevron.right"
+        case checkedSquare = "checkmark.square"
+        case checkedCirle = "checkmark.circle"
+        case square = "square"
+        case circle = "circle"
+        case search = "magnifyingglass"
+        case cross = "xmark.circle.fill"
+        
         var value : String {
             return self.rawValue
         }
