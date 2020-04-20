@@ -7,3 +7,22 @@
 //
 
 import Foundation
+
+extension Constants {
+    
+    enum Theme : String {
+        case light ,dark
+    }
+    
+    enum Texts : String {
+        
+        case pleaseWait = "Please Wait..."
+        case navTitle = "NY Times Most Viewed"
+        case next = "Next"
+        case finish = "Finish"
+        
+        var value : String {
+            return self.rawValue
+        }
+    }
+}
