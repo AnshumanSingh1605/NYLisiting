@@ -24,6 +24,8 @@ import SwiftUI
 //}
 
 struct MenuView: View {
+    @Binding var showMenu : Bool
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -59,11 +61,10 @@ struct MenuView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(Color(red: 32/255, green: 32/255, blue: 32/255))
             .edgesIgnoringSafeArea(.all)
-    }
-}
-
-struct MenuView_Previews: PreviewProvider {
-    static var previews: some View {
-        MenuView()
+            .onTapGesture {
+                withAnimation {
+                    self.showMenu.toggle()
+                }
+            }
     }
 }
