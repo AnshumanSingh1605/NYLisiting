@@ -10,8 +10,12 @@ import Foundation
 
 extension Constants {
     
-    enum Theme : String {
+    enum Theme : String , CustomStringConvertible {
         case light ,dark
+        
+        var description: String {
+            return self.rawValue
+        }
     }
     
     enum Texts : String {
@@ -24,5 +28,10 @@ extension Constants {
         var value : String {
             return self.rawValue
         }
+    }
+    
+    enum Alignment {
+        case horizontal
+        case vertical
     }
 }
