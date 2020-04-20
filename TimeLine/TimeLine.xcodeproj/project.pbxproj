@@ -30,6 +30,10 @@
 		3C8BAF15244CE36500FBC243 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8BAF14244CE36500FBC243 /* AppConstants.swift */; };
 		3C8BAF17244CE3D100FBC243 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8BAF16244CE3D100FBC243 /* AppTheme.swift */; };
 		3C8BAF19244CE3F400FBC243 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8BAF18244CE3F400FBC243 /* AppColors.swift */; };
+		3C8BAF1B244CE82F00FBC243 /* TimeLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8BAF1A244CE82F00FBC243 /* TimeLineView.swift */; };
+		3C8BAF1D244CE83900FBC243 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8BAF1C244CE83900FBC243 /* MenuView.swift */; };
+		3C8BAF1F244D58D200FBC243 /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8BAF1E244D58D200FBC243 /* AppImages.swift */; };
+		3C8BAF21244D595B00FBC243 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8BAF20244D595B00FBC243 /* ImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +106,10 @@
 		3C8BAF14244CE36500FBC243 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		3C8BAF16244CE3D100FBC243 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		3C8BAF18244CE3F400FBC243 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		3C8BAF1A244CE82F00FBC243 /* TimeLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineView.swift; sourceTree = "<group>"; };
+		3C8BAF1C244CE83900FBC243 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		3C8BAF1E244D58D200FBC243 /* AppImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
+		3C8BAF20244D595B00FBC243 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +238,8 @@
 			isa = PBXGroup;
 			children = (
 				3C5E8D73244C8F47004A4459 /* ContentView.swift */,
+				3C8BAF1A244CE82F00FBC243 /* TimeLineView.swift */,
+				3C8BAF1C244CE83900FBC243 /* MenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -270,6 +280,7 @@
 			children = (
 				3C8BAF0F244CE30F00FBC243 /* TextExtension.swift */,
 				3C8BAF11244CE32E00FBC243 /* ViewExtension.swift */,
+				3C8BAF20244D595B00FBC243 /* ImageExtension.swift */,
 			);
 			path = Wrappers;
 			sourceTree = "<group>";
@@ -280,6 +291,7 @@
 				3C8BAF14244CE36500FBC243 /* AppConstants.swift */,
 				3C8BAF16244CE3D100FBC243 /* AppTheme.swift */,
 				3C8BAF18244CE3F400FBC243 /* AppColors.swift */,
+				3C8BAF1E244D58D200FBC243 /* AppImages.swift */,
 			);
 			path = AppConstants;
 			sourceTree = "<group>";
@@ -441,12 +453,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C8BAF04244CE09000FBC243 /* UserDefaultsConstants.swift in Sources */,
+				3C8BAF21244D595B00FBC243 /* ImageExtension.swift in Sources */,
+				3C8BAF1F244D58D200FBC243 /* AppImages.swift in Sources */,
 				3C5E8DE6244CD3ED004A4459 /* ListingModel.swift in Sources */,
 				3C5E8D70244C8F47004A4459 /* AppDelegate.swift in Sources */,
 				3C8BAF19244CE3F400FBC243 /* AppColors.swift in Sources */,
 				3C5E8DEA244CD4BC004A4459 /* MediaModel.swift in Sources */,
 				3C8BAF0D244CE16000FBC243 /* AlertMessages.swift in Sources */,
 				3C8BAF08244CE11600FBC243 /* Utility.swift in Sources */,
+				3C8BAF1D244CE83900FBC243 /* MenuView.swift in Sources */,
 				3C8BAF12244CE32E00FBC243 /* ViewExtension.swift in Sources */,
 				3C8BAF17244CE3D100FBC243 /* AppTheme.swift in Sources */,
 				3C8BAF0B244CE15500FBC243 /* AlertEssentials.swift in Sources */,
@@ -455,6 +470,7 @@
 				3C8BAF15244CE36500FBC243 /* AppConstants.swift in Sources */,
 				3C5E8D74244C8F47004A4459 /* ContentView.swift in Sources */,
 				3C8BAF06244CE0B100FBC243 /* UserDefaultManager.swift in Sources */,
+				3C8BAF1B244CE82F00FBC243 /* TimeLineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
