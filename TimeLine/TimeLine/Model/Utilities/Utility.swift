@@ -60,7 +60,7 @@ final class Utility {
     
     static func showAlert(message : String , completion : NullableCompletion) {
         let alert = UIAlertController(
-            title: "Maskfit AR",
+            title: "Time Line",
             message: message,
             preferredStyle: .alert
         )
